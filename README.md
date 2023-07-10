@@ -1,1 +1,1 @@
-# newMvn-proj
+# mvn-app

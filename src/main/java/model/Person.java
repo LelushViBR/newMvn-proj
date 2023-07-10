@@ -12,18 +12,20 @@ import java.util.Objects;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Person {
-    private int id;
+
+    private int id ;
     private String name;
-    private String lName;
+    private String lastName;
     private int age;
     private Cat cat;
 
-    public Person(int id, String name, String lName, int age) {
+    public Person(int id, String name, String lastName, int age) {
         this.id = id;
         this.name = name;
-        this.lName = lName;
+        this.lastName = lastName;
         this.age = age;
     }
+
 
 
 
@@ -33,11 +35,13 @@ public class Person {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return id == person.id && age == person.age && name.equals(person.name) && lName.equals(person.lName);
+        return id == person.id && age == person.age && Objects.equals(name, person.name)
+                && Objects.equals(lastName, person.lastName) && Objects.equals(cat, person.cat);
     }
+
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, lName, age);
+        return Objects.hash(id, name, lastName, age, cat);
     }
 }
