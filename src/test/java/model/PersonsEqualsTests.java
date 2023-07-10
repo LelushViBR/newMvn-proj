@@ -4,7 +4,7 @@ public class PersonsEqualsTests {
     public static void main(String[] args) {
         Person p = new Person();
         p.setName("John");
-        p.setLName("Johnson");
+
         p.setAge(55);
         p.setId(100);
 
